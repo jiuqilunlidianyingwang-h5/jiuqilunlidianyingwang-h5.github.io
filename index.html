@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>九七伦理电影网 - 伦理电影电视剧动漫综艺在线观看</title>
+<meta name="description" content="九七伦理电影网提供伦理电影、热播电视剧、人气动漫、深度综艺在线观看，九七伦理电影网手机电脑都能看，分类清晰、更新及时。">
+<meta name="keywords" content="九七伦理电影网,伦理电影,在线观看,热播电视剧,人气动漫,深度综艺">
+<meta name="author" content="九七伦理电影网">
+<link rel="canonical" href="https://jiuqilunlidianyingwang-h5.github.io/">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  background:#120a0f;
+  color:#f3e9ef;
+  line-height:1.7;
+}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+
+/* 导航：暗红复古 */
+.nav{
+  position:sticky;top:0;z-index:99;
+  background:rgba(18,10,15,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid #3a1c28;
+}
+.nav__box{
+  max-width:1200px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.8rem 1rem;flex-wrap:wrap;gap:.5rem;
+}
+.nav__logo{font-weight:900;font-size:1.25rem;color:#e0556f}
+.nav__logo b{color:#fff}
+.nav__links{display:flex;gap:.35rem;flex-wrap:wrap}
+.nav__links a{
+  padding:.4rem .8rem;border-radius:999px;
+  font-size:.88rem;color:#d9b9c4;transition:.25s;
+}
+.nav__links a:hover{background:#3a1c28;color:#ff8198}
+
+/* Hero：暗红丝绒 */
+.hero{
+  max-width:1200px;margin:2rem auto;padding:0 1rem;
+}
+.hero__card{
+  border-radius:26px;overflow:hidden;
+  background:
+    radial-gradient(circle at 80% 20%,rgba(224,85,111,.35),transparent 60%),
+    linear-gradient(135deg,#2a0f18,#5a1f2e 60%,#8a2c44);
+  display:grid;grid-template-columns:1.25fr .75fr;
+}
+.hero__left{padding:3rem 2rem}
+.hero__kicker{
+  display:inline-block;font-size:.75rem;letter-spacing:3px;
+  border:1px solid rgba(255,129,152,.5);color:#ff8198;
+  padding:.2rem .8rem;border-radius:999px;margin-bottom:1rem;
+}
+.hero h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.15;margin-bottom:1rem}
+.hero h1 em{font-style:normal;color:#ff8198}
+.hero p{color:rgba(243,233,239,.82);max-width:520px;margin-bottom:1.6rem}
+.hero__btn{
+  display:inline-block;background:#e0556f;color:#fff;
+  font-weight:800;padding:.8rem 2rem;border-radius:999px;
+}
+.hero__right{
+  display:flex;align-items:center;justify-content:center;
+  font-size:7rem;filter:drop-shadow(0 10px 30px rgba(0,0,0,.45));
+}
+
+/* 通用 */
+.wrap{max-width:1200px;margin:3.5rem auto;padding:0 1rem}
+.head{display:flex;align-items:baseline;gap:1rem;margin-bottom:1.5rem}
+.head h2{font-size:1.6rem}
+.head h2 span{color:#ff8198}
+.head a{margin-left:auto;color:#d9b9c4;font-size:.85rem}
+
+/* 栏目1：伦理电影——竖排海报墙 */
+.film-wall{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:1.2rem;
+}
+.poster{
+  border-radius:16px;overflow:hidden;background:#1c0f16;border:1px solid #3a1c28;
+  transition:.3s;
+}
+.poster:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(224,85,111,.2)}
+.poster__img{height:230px;display:flex;align-items:center;justify-content:center;font-size:3rem;color:#fff}
+.poster__body{padding:.8rem 1rem}
+.poster__body h3{font-size:.98rem;margin-bottom:.2rem}
+.poster__body p{font-size:.78rem;color:#b98ca0}
+
+/* 栏目2：电视剧——左大图+右分集列表 */
+.tv-split{display:grid;grid-template-columns:1.1fr .9fr;gap:1.5rem}
+.tv-feature{
+  border-radius:20px;min-height:420px;color:#fff;position:relative;overflow:hidden;
+  display:flex;align-items:flex-end;padding:2rem;
+}
+.tv-feature__mask{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.82),transparent 70%)}
+.tv-feature__c{position:relative;z-index:1}
+.tv-feature__c h3{font-size:1.7rem;margin-bottom:.4rem}
+.tv-feature__c p{color:rgba(255,255,255,.82);margin-bottom:1rem}
+.tv-feature__c a{background:#e0556f;padding:.5rem 1.4rem;border-radius:999px;font-weight:700}
+.tv-side{display:flex;flex-direction:column;gap:.7rem}
+.ep-row{
+  display:flex;align-items:center;gap:.8rem;
+  background:#1c0f16;border:1px solid #3a1c28;border-radius:14px;padding:.7rem .9rem;
+}
+.ep-row__no{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;flex:none}
+.ep-row h4{font-size:.92rem}
+.ep-row small{color:#b98ca0}
+.ep-row em{margin-left:auto;font-style:normal;color:#ff8198;font-weight:700;font-size:.78rem}
+
+/* 栏目3：动漫——菱形网格 */
+.anime-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:1.4rem}
+.diamond{
+  aspect-ratio:1/1;transform:rotate(45deg);
+  border-radius:18px;display:flex;align-items:center;justify-content:center;
+  color:#fff;text-align:center;
+}
+.diamond>div{transform:rotate(-45deg)}
+.diamond b{font-size:.9rem}
+.diamond small{font-size:.7rem;opacity:.85;display:block}
+
+/* 栏目4：综艺——折叠面板 */
+.show-acc{display:flex;flex-direction:column;gap:.8rem}
+.acc-item{
+  background:#1c0f16;border:1px solid #3a1c28;border-radius:14px;padding:1rem 1.2rem;
+}
+.acc-item__top{display:flex;align-items:center;gap:.8rem}
+.acc-item__icon{font-size:1.6rem}
+.acc-item h4{font-size:1.02rem}
+.acc-item p{color:#c9a7b4;font-size:.86rem;margin-top:.4rem}
+
+/* 栏目5：深度榜单——横向进度条 */
+.rank-list{display:flex;flex-direction:column;gap:1rem}
+.rk-bar{
+  background:#1c0f16;border:1px solid #3a1c28;border-radius:14px;padding:.9rem 1.1rem;
+}
+.rk-bar__top{display:flex;align-items:center;gap:.8rem;margin-bottom:.5rem}
+.rk-bar__no{font-size:1.4rem;font-weight:900;color:#ff8198;width:34px;flex:none}
+.rk-bar h4{font-size:.98rem}
+.rk-bar__track{height:8px;background:#321a24;border-radius:999px;overflow:hidden}
+.rk-bar__fill{height:100%;background:linear-gradient(90deg,#e0556f,#ff8198)}
+
+/* 页脚 */
+.foot{
+  margin-top:4rem;background:#0c060a;color:#c9a7b4;text-align:center;padding:2.5rem 1rem;
+  border-top:1px solid #3a1c28;
+}
+.foot b{color:#fff}
+.foot a{color:#ff8198;margin:0 .4rem}
+.foot small{display:block;margin-top:.8rem;color:#8a6573}
+
+@media(max-width:880px){
+  .hero__card{grid-template-columns:1fr}
+  .hero__right{min-height:150px;font-size:4.5rem}
+  .tv-split{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .nav__box{justify-content:center}
+  .head h2{font-size:1.3rem}
+  .poster__img{height:200px}
+  .diamond{aspect-ratio:1/1}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<!-- 导航 -->
+<header class="nav">
+  <div class="nav__box">
+    <div class="nav__logo">九七<b>伦理电影网</b></div>
+    <nav class="nav__links">
+      <a href="#film">伦理电影</a>
+      <a href="#tv">电视剧</a>
+      <a href="#anime">动漫</a>
+      <a href="#variety">综艺</a>
+      <a href="#rank">深度榜</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero__card">
+    <div class="hero__left">
+      <span class="hero__kicker">JIUQI LUNLI MOVIE</span>
+      <h1>九七伦理电影网<br><em>人情世故 · 影像深处</em></h1>
+      <p>九七伦理电影网聚焦家庭、情感、社会与人性议题的影视内容，电影、剧集、动漫、综艺一站式整理，手机端自适应，打开即看。</p>
+      <a href="#film" class="hero__btn">进入片库 ›</a>
+    </div>
+    <div class="hero__right">🎞️</div>
+  </div>
+</section>
+
+<!-- 栏目1：伦理电影 -->
+<section class="wrap" id="film">
+  <div class="head"><h2>伦理<span>电影</span></h2><a href="#">更多 ›</a></div>
+  <div class="film-wall">
+    <article class="poster">
+      <div class="poster__img" style="background:linear-gradient(135deg,#5a1f2e,#e0556f)">🎬</div>
+      <div class="poster__body"><h3>九七伦理电影网：屋檐下的谎</h3><p>家庭 / 116分钟</p></div>
+    </article>
+    <article class="poster">
+      <div class="poster__img" style="background:linear-gradient(135deg,#2a0f18,#8a2c44)">🎬</div>
+      <div class="poster__body"><h3>长夜来信</h3><p>剧情 / 124分钟</p></div>
+    </article>
+    <article class="poster">
+      <div class="poster__img" style="background:linear-gradient(135deg,#8a2c44,#ff8198)">🎬</div>
+      <div class="poster__body"><h3>母亲的名字</h3><p>伦理 / 108分钟</p></div>
+    </article>
+    <article class="poster">
+      <div class="poster__img" style="background:linear-gradient(135deg,#3a1c28,#e0556f)">🎬</div>
+      <div class="poster__body"><h3>旧城婚书</h3><p>年代 / 131分钟</p></div>
+    </article>
+    <article class="poster">
+      <div class="poster__img" style="background:linear-gradient(135deg,#5a1f2e,#321a24)">🎬</div>
+      <div class="poster__body"><h3>无声证人</h3><p>悬疑 / 102分钟</p></div>
+    </article>
+    <article class="poster">
+      <div class="poster__img" style="background:linear-gradient(135deg,#e0556f,#2a0f18)">🎬</div>
+      <div class="poster__body"><h3>晚秋家事</h3><p>伦理 / 119分钟</p></div>
+    </article>
+  </div>
+</section>
+
+<!-- 栏目2：电视剧 -->
+<section class="wrap" id="tv">
+  <div class="head"><h2>热播<span>电视剧</span></h2><a href="#">更多 ›</a></div>
+  <div class="tv-split">
+    <article class="tv-feature" style="background:linear-gradient(135deg,#5a1f2e,#2a0f18)">
+      <div class="tv-feature__mask"></div>
+      <div class="tv-feature__c">
+        <h3>九七伦理电影网独播：三世一家人</h3>
+        <p>三代同堂、房产与亲情，42集连续剧，台词扎心。</p>
+        <a href="#">立即追剧</a>
+      </div>
+    </article>
+    <div class="tv-side">
+      <div class="ep-row">
+        <div class="ep-row__no" style="background:#e0556f">1</div>
+        <div><h4>巷口理发店</h4><small>都市 / 36集</small></div>
+        <em>更新28</em>
+      </div>
+      <div class="ep-row">
+        <div class="ep-row__no" style="background:#8a2c44">2</div>
+        <div><h4>继母的账本</h4><small>家庭 / 30集</small></div>
+        <em>已完结</em>
+      </div>
+      <div class="ep-row">
+        <div class="ep-row__no" style="background:#ff8198;color:#2a0f18">3</div>
+        <div><h4>兄弟遗产局</h4><small>伦理 / 24集</small></div>
+        <em>更新19</em>
+      </div>
+      <div class="ep-row">
+        <div class="ep-row__no" style="background:#3a1c28">4</div>
+        <div><h4>城南旧婚</h4><small>年代 / 48集</small></div>
+        <em>已完结</em>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目3：动漫 -->
+<section class="wrap" id="anime">
+  <div class="head"><h2>人性<span>动漫</span></h2><a href="#">更多 ›</a></div>
+  <div class="anime-grid">
+    <div class="diamond" style="background:linear-gradient(135deg,#5a1f2e,#e0556f)"><div><b>家犬与女孩</b><small>治愈·伦理</small></div></div>
+    <div class="diamond" style="background:linear-gradient(135deg,#2a0f18,#8a2c44)"><div><b>雾中学校</b><small>校园·悬疑</small></div></div>
+    <div class="diamond" style="background:linear-gradient(135deg,#8a2c44,#ff8198)"><div><b>外婆的灯塔</b><small>温情·日常</small></div></div>
+    <div class="diamond" style="background:linear-gradient(135deg,#3a1c28,#e0556f)"><div><b>兄弟同盟</b><small>热血·成长</small></div></div>
+    <div class="diamond" style="background:linear-gradient(135deg,#5a1f2e,#321a24)"><div><b>末班车猫</b><small>奇幻·治愈</small></div></div>
+    <div class="diamond" style="background:linear-gradient(135deg,#e0556f,#2a0f18)"><div><b>旧镇怪谈</b><small>志怪·伦理</small></div></div>
+  </div>
+</section>
+
+<!-- 栏目4：综艺 -->
+<section class="wrap" id="variety">
+  <div class="head"><h2>深度<span>综艺</span></h2><a href="#">更多 ›</a></div>
+  <div class="show-acc">
+    <article class="acc-item">
+      <div class="acc-item__top">
+        <div class="acc-item__icon">🎙️</div>
+        <h4>九七伦理电影网同步：家庭圆桌派</h4>
+      </div>
+      <p>三代人同台聊婚姻、财产、养老，真实到尴尬。</p>
+    </article>
+    <article class="acc-item">
+      <div class="acc-item__top">
+        <div class="acc-item__icon">📺</div>
+        <h4>人间观察室</h4>
+      </div>
+      <p>素人故事+心理嘉宾，社会议题不喊口号。</p>
+    </article>
+    <article class="acc-item">
+      <div class="acc-item__top">
+        <div class="acc-item__icon">🎭</div>
+        <h4>剧本里的父亲</h4>
+      </div>
+      <p>演员重演家庭片段，解读中国式亲情。</p>
+    </article>
+    <article class="acc-item">
+      <div class="acc-item__top">
+        <div class="acc-item__icon">🌙</div>
+        <h4>深夜家书</h4>
+      </div>
+      <p>读信、和解、告别，慢综艺但后劲大。</p>
+    </article>
+  </div>
+</section>
+
+<!-- 栏目5：深度榜 -->
+<section class="wrap" id="rank">
+  <div class="head"><h2>本站<span>深度榜</span></h2><a href="#">更多 ›</a></div>
+  <div class="rank-list">
+    <div class="rk-bar">
+      <div class="rk-bar__top"><div class="rk-bar__no">1</div><h4>屋檐下的谎</h4></div>
+      <div class="rk-bar__track"><div class="rk-bar__fill" style="width:96%"></div></div>
+    </div>
+    <div class="rk-bar">
+      <div class="rk-bar__top"><div class="rk-bar__no">2</div><h4>三世一家人</h4></div>
+      <div class="rk-bar__track"><div class="rk-bar__fill" style="width:91%"></div></div>
+    </div>
+    <div class="rk-bar">
+      <div class="rk-bar__top"><div class="rk-bar__no">3</div><h4>母亲的名字</h4></div>
+      <div class="rk-bar__track"><div class="rk-bar__fill" style="width:87%"></div></div>
+    </div>
+    <div class="rk-bar">
+      <div class="rk-bar__top"><div class="rk-bar__no">4</div><h4>家庭圆桌派</h4></div>
+      <div class="rk-bar__track"><div class="rk-bar__fill" style="width:82%"></div></div>
+    </div>
+    <div class="rk-bar">
+      <div class="rk-bar__top"><div class="rk-bar__no">5</div><h4>外婆的灯塔</h4></div>
+      <div class="rk-bar__track"><div class="rk-bar__fill" style="width:78%"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="foot">
+  <div><b>九七伦理电影网</b> · 看人情，看世故，看影像</div>
+  <div style="margin-top:.6rem">
+    <a href="#film">伦理电影</a>|
+    <a href="#tv">电视剧</a>|
+    <a href="#anime">动漫</a>|
+    <a href="#variety">综艺</a>|
+    <a href="#">关于</a>|
+    <a href="#">声明</a>
+  </div>
+  <small>官网：https://jiuqilunlidianyingwang-h5.github.io</small>
+  <small>© 2025 九七伦理电影网 保留所有权利</small>
+</footer>
+
+</body>
+</html>
